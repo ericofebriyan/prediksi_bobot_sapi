@@ -44,3 +44,6 @@ mobile/android/gradle/wrapper/gradle-wrapper.jar
 .DS_Store
 Thumbs.db
 
+# Dokumen Internal Skripsi
+DEVELOPMENT_PLAN.md
+FIELD_SURVEY_KIT.md
