@@ -1,0 +1,7 @@
+no,tag_sapi,nama_peternak,lokasi_desa_kabupaten,usia_masuk_bulan,jenis_kelamin,bobot_awal_kg,metode_timbang_awal,jenis_pakan_dominan,jumlah_pakan_kg_hari,frekuensi_pakan_hari,kondisi_kesehatan,status_vaksinasi,tanggal_masuk,tanggal_panen_timbang_akhir,bobot_akhir_kg,durasi_penggemukan_hari,adg_riil_kg_hari,catatan_tambahan
+1,MDR-001,Pak Hasan,Desa Burneh Bangkalan,18,Jantan,220.5,Timbangan Digital,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),2026-06-01,2026-10-15,355.0,136,0.989,Nafsu makan sangat baik
+2,MDR-002,Pak Mathur,Kecamatan Socah Bangkalan,24,Jantan,245.0,Pita Ukur Rondo,Jerami Padi Fermentasi + Ampas Tahu,20.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),2026-05-10,2026-10-20,360.0,163,0.706,Kandang panggung kering
+3,MDR-003,H. Zaini,Pasar Hewan Keppo Pamekasan,16,Jantan,210.0,Timbangan Digital,Konsentrat Komersial Tinggi Protein,18.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),2026-07-01,2026-10-25,325.0,116,0.991,Program persiapan Idul Adha
+4,MDR-004,Pak Rusdi,Kecamatan Ganding Sumenep,20,Betina,195.0,Pita Ukur Schoorl,Hijauan Murni (Rumput Lapang),18.0,2,Dalam Pemulihan,Vaksin Sebagian,2026-04-01,2026-10-10,285.0,192,0.469,Sempat diare minggu ke-2
+5,MDR-005,Pak Slamet,Kecamatan Robatal Sampang,14,Jantan,185.0,Pita Ukur Rondo,Konsentrat + Hijauan (Rumput Gajah),16.0,3,Sehat & Aktif,Belum Divaksin,2026-06-15,2026-11-01,295.0,139,0.791,Sapi bakalan lokal Madura murni
+

@@ -1,0 +1,6 @@
+cattle_id,bobot_awal,usia_masuk,jenis_kelamin,jenis_pakan,jumlah_pakan_harian,frekuensi_pakan,kondisi_kesehatan,status_vaksinasi,target_bobot,adg_kg_per_hari,durasi_panen_hari
+MDR-001,220.5,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),355.0,0.989,136
+MDR-002,245.0,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),360.0,0.706,163
+MDR-003,210.0,16,Jantan,Konsentrat Komersial Tinggi Protein,18.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),325.0,0.991,116
+MDR-004,195.0,20,Betina,Hijauan Murni (Rumput Lapang),18.0,2,Dalam Pemulihan,Vaksin Sebagian,285.0,0.469,192
+MDR-005,185.0,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),16.0,3,Sehat & Aktif,Belum Divaksin,295.0,0.791,139

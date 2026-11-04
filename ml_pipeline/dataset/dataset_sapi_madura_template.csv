@@ -1,0 +1,451 @@
+cattle_id,bobot_awal,usia_masuk,jenis_kelamin,jenis_pakan,jumlah_pakan_harian,frekuensi_pakan,kondisi_kesehatan,status_vaksinasi,target_bobot,adg_kg_per_hari,durasi_panen_hari
+MDR-0001,221.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.2,0.909,109
+MDR-0002,228.2,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),390.7,0.692,235
+MDR-0003,218.6,16,Jantan,Konsentrat Komersial Tinggi Protein,17.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.941,108
+MDR-0004,214.0,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),363.5,0.955,157
+MDR-0005,234.2,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),348.2,0.727,157
+MDR-0006,254.3,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.4,3,Dalam Pemulihan,Vaksin Sebagian,364.1,0.541,203
+MDR-0007,208.1,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.6,2,Nafsu Makan Menurun,Belum Divaksin,326.4,0.714,166
+MDR-0008,212.6,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.2,3,Sehat & Aktif,Belum Divaksin,338.5,0.735,172
+MDR-0009,239.6,24,Jantan,Konsentrat Komersial Tinggi Protein,24.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),364.2,0.963,130
+MDR-0010,204.6,18,Betina,Silase Jagung + Hijauan Segar,16.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),352.3,0.669,221
+MDR-0011,243.0,20,Jantan,Konsentrat Komersial Tinggi Protein,25.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),389.3,1.038,141
+MDR-0012,239.3,16,Jantan,Konsentrat Komersial Tinggi Protein,23.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),331.1,0.972,95
+MDR-0013,265.8,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.6,2,Sehat & Aktif,Vaksin Sebagian,443.8,0.742,240
+MDR-0014,213.8,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),369.5,0.644,242
+MDR-0015,230.7,28,Jantan,Hijauan Murni (Rumput Lapang),20.8,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),341.4,0.523,212
+MDR-0016,226.6,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.1,0.803,173
+MDR-0017,217.4,24,Jantan,Konsentrat Komersial Tinggi Protein,21.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),349.4,0.796,166
+MDR-0018,220.7,28,Jantan,Hijauan Murni (Rumput Lapang),20.3,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),348.7,0.457,281
+MDR-0019,222.0,14,Jantan,Silase Jagung + Hijauan Segar,20.1,4,Dalam Pemulihan,Belum Divaksin,395.4,0.721,241
+MDR-0020,232.7,20,Jantan,Silase Jagung + Hijauan Segar,24.2,2,Sehat & Aktif,Belum Divaksin,393.4,0.748,215
+MDR-0021,217.5,28,Betina,Jerami Padi Fermentasi + Ampas Tahu,21.2,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),356.3,0.427,326
+MDR-0022,224.9,24,Jantan,Silase Jagung + Hijauan Segar,20.2,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),321.0,0.627,154
+MDR-0023,239.5,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.2,3,Sehat & Aktif,Belum Divaksin,347.9,0.587,185
+MDR-0024,221.6,20,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.5,4,Sehat & Aktif,Vaksin Sebagian,362.3,0.749,188
+MDR-0025,247.1,24,Jantan,Silase Jagung + Hijauan Segar,27.3,3,Sehat & Aktif,Vaksin Sebagian,400.4,0.777,198
+MDR-0026,175.4,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,17.9,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),345.5,0.493,346
+MDR-0027,224.4,18,Jantan,Konsentrat Komersial Tinggi Protein,19.0,3,Sehat & Aktif,Belum Divaksin,390.5,0.911,183
+MDR-0028,244.3,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.9,2,Sehat & Aktif,Vaksin Sebagian,384.8,0.897,157
+MDR-0029,265.4,28,Betina,Jerami Padi Fermentasi + Ampas Tahu,28.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),436.3,0.563,304
+MDR-0030,237.5,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.6,3,Sehat & Aktif,Vaksin Sebagian,341.4,0.857,122
+MDR-0031,264.8,30,Jantan,Silase Jagung + Hijauan Segar,20.9,3,Dalam Pemulihan,Vaksin Sebagian,432.6,0.592,284
+MDR-0032,231.5,30,Jantan,Hijauan Murni (Rumput Lapang),17.9,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),395.3,0.373,440
+MDR-0033,235.8,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),26.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),414.1,0.841,213
+MDR-0034,175.0,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),335.8,0.896,180
+MDR-0035,175.0,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,15.5,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),329.7,0.669,232
+MDR-0036,223.3,18,Jantan,Silase Jagung + Hijauan Segar,24.5,3,Sehat & Aktif,Belum Divaksin,358.9,0.769,177
+MDR-0037,215.2,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.7,3,Dalam Pemulihan,Vaksin Sebagian,332.3,0.726,162
+MDR-0038,224.4,18,Jantan,Konsentrat Komersial Tinggi Protein,21.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),385.8,0.997,162
+MDR-0039,259.8,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.1,3,Sehat & Aktif,Vaksin Sebagian,370.0,0.648,171
+MDR-0040,226.5,16,Betina,Jerami Padi Fermentasi + Ampas Tahu,23.2,3,Sehat & Aktif,Vaksin Sebagian,351.1,0.667,187
+MDR-0041,215.0,28,Jantan,Konsentrat Komersial Tinggi Protein,21.2,3,Sehat & Aktif,Belum Divaksin,351.6,0.853,161
+MDR-0042,240.8,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.3,3,Sehat & Aktif,Vaksin Sebagian,370.6,0.83,157
+MDR-0043,243.4,20,Jantan,Jerami Padi Fermentasi + Ampas Tahu,26.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),390.8,0.736,201
+MDR-0044,227.6,28,Jantan,Hijauan Murni (Rumput Lapang),22.3,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),331.2,0.436,238
+MDR-0045,215.6,16,Jantan,Hijauan Murni (Rumput Lapang),20.3,2,Sehat & Aktif,Belum Divaksin,358.2,0.577,248
+MDR-0046,210.4,30,Jantan,Hijauan Murni (Rumput Lapang),22.5,3,Dalam Pemulihan,Vaksin Sebagian,348.8,0.433,320
+MDR-0047,221.2,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.3,3,Sehat & Aktif,Vaksin Sebagian,386.8,0.878,189
+MDR-0048,279.1,24,Jantan,Hijauan Murni (Rumput Lapang),25.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),373.6,0.5,189
+MDR-0049,214.0,18,Jantan,Silase Jagung + Hijauan Segar,19.5,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),371.4,0.764,207
+MDR-0050,276.3,16,Jantan,Konsentrat Komersial Tinggi Protein,27.9,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),380.0,1.032,101
+MDR-0051,248.0,24,Betina,Hijauan Murni (Rumput Lapang),20.7,3,Nafsu Makan Menurun,Vaksin Sebagian,408.0,0.28,572
+MDR-0052,234.8,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),387.0,0.867,176
+MDR-0053,217.9,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),367.4,0.67,224
+MDR-0054,253.8,14,Jantan,Konsentrat Komersial Tinggi Protein,21.4,3,Dalam Pemulihan,Vaksin Sebagian,383.0,0.916,142
+MDR-0055,219.2,18,Jantan,Silase Jagung + Hijauan Segar,22.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),331.3,0.773,146
+MDR-0056,241.3,20,Jantan,Hijauan Murni (Rumput Lapang),23.2,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),350.4,0.529,207
+MDR-0057,230.9,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.8,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),389.1,0.736,215
+MDR-0058,213.4,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),353.2,0.839,167
+MDR-0059,183.8,24,Jantan,Konsentrat Komersial Tinggi Protein,15.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),322.0,0.909,153
+MDR-0060,226.1,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.5,3,Nafsu Makan Menurun,Vaksin Sebagian,342.8,0.766,153
+MDR-0061,213.0,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.6,3,Sehat & Aktif,Belum Divaksin,347.2,0.825,163
+MDR-0062,245.0,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),26.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),379.3,0.931,145
+MDR-0063,195.3,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.2,2,Sehat & Aktif,Vaksin Sebagian,356.5,0.702,230
+MDR-0064,229.1,20,Betina,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Belum Divaksin,328.0,0.805,123
+MDR-0065,227.5,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),343.7,0.823,142
+MDR-0066,229.0,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.7,3,Sehat & Aktif,Vaksin Sebagian,336.8,0.85,127
+MDR-0067,236.8,16,Betina,Konsentrat Komersial Tinggi Protein,17.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),352.8,0.855,136
+MDR-0068,248.9,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.5,3,Dalam Pemulihan,Vaksin Sebagian,393.2,0.778,186
+MDR-0069,240.7,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,27.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),398.8,0.696,228
+MDR-0070,193.6,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),343.9,0.742,203
+MDR-0071,237.3,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),337.7,0.592,170
+MDR-0072,231.2,30,Betina,Jerami Padi Fermentasi + Ampas Tahu,21.8,2,Sehat & Aktif,Vaksin Sebagian,377.5,0.436,336
+MDR-0073,225.9,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.1,2,Sehat & Aktif,Vaksin Sebagian,379.8,0.788,196
+MDR-0074,223.6,20,Jantan,Silase Jagung + Hijauan Segar,24.1,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),378.1,0.745,208
+MDR-0075,207.4,30,Jantan,Hijauan Murni (Rumput Lapang),18.2,2,Sehat & Aktif,Vaksin Sebagian,320.0,0.493,229
+MDR-0076,259.3,30,Jantan,Silase Jagung + Hijauan Segar,25.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),439.2,0.752,240
+MDR-0077,212.5,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.6,4,Dalam Pemulihan,Belum Divaksin,324.0,0.71,158
+MDR-0078,192.9,20,Jantan,Konsentrat Komersial Tinggi Protein,20.3,3,Sehat & Aktif,Vaksin Sebagian,371.2,1.055,170
+MDR-0079,219.0,24,Betina,Konsentrat + Hijauan (Rumput Gajah),18.3,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),322.0,0.567,182
+MDR-0080,265.1,14,Jantan,Silase Jagung + Hijauan Segar,23.8,3,Dalam Pemulihan,Belum Divaksin,432.4,0.64,262
+MDR-0081,211.0,28,Betina,Hijauan Murni (Rumput Lapang),20.4,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),321.5,0.408,271
+MDR-0082,276.3,30,Jantan,Silase Jagung + Hijauan Segar,25.7,4,Sehat & Aktif,Vaksin Sebagian,392.7,0.768,152
+MDR-0083,216.3,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,17.0,3,Sehat & Aktif,Vaksin Sebagian,351.1,0.639,211
+MDR-0084,211.1,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),16.9,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),340.9,0.789,165
+MDR-0085,208.5,28,Betina,Jerami Padi Fermentasi + Ampas Tahu,18.7,4,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),332.8,0.48,259
+MDR-0086,213.3,28,Jantan,Silase Jagung + Hijauan Segar,20.6,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.749,143
+MDR-0087,204.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.7,2,Sehat & Aktif,Vaksin Sebagian,363.9,0.886,180
+MDR-0088,220.0,14,Betina,Jerami Padi Fermentasi + Ampas Tahu,19.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),336.6,0.617,189
+MDR-0089,224.8,16,Jantan,Silase Jagung + Hijauan Segar,20.0,3,Sehat & Aktif,Belum Divaksin,399.8,0.757,232
+MDR-0090,243.0,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),25.8,4,Dalam Pemulihan,Vaksin Sebagian,421.2,0.762,234
+MDR-0091,263.9,18,Jantan,Hijauan Murni (Rumput Lapang),21.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),388.2,0.622,200
+MDR-0092,211.3,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.8,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),375.4,0.828,199
+MDR-0093,240.7,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.7,0.861,146
+MDR-0094,188.0,28,Betina,Hijauan Murni (Rumput Lapang),18.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.485,273
+MDR-0095,230.4,18,Jantan,Hijauan Murni (Rumput Lapang),19.1,4,Sehat & Aktif,Belum Divaksin,378.4,0.583,254
+MDR-0096,241.4,14,Betina,Konsentrat Komersial Tinggi Protein,18.4,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),361.4,0.692,174
+MDR-0097,263.6,16,Jantan,Konsentrat Komersial Tinggi Protein,21.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),434.6,0.967,177
+MDR-0098,268.5,16,Betina,Jerami Padi Fermentasi + Ampas Tahu,26.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),429.5,0.657,246
+MDR-0099,221.7,18,Jantan,Konsentrat Komersial Tinggi Protein,21.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),321.5,0.999,100
+MDR-0100,175.0,14,Jantan,Silase Jagung + Hijauan Segar,16.9,3,Sehat & Aktif,Belum Divaksin,341.3,0.788,212
+MDR-0101,215.6,28,Betina,Konsentrat + Hijauan (Rumput Gajah),17.3,2,Sehat & Aktif,Vaksin Sebagian,355.0,0.647,216
+MDR-0102,192.6,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.3,2,Sehat & Aktif,Belum Divaksin,332.2,0.653,214
+MDR-0103,240.5,16,Jantan,Konsentrat Komersial Tinggi Protein,22.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),416.3,0.968,182
+MDR-0104,215.4,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),355.9,0.883,160
+MDR-0105,219.6,18,Jantan,Silase Jagung + Hijauan Segar,21.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.812,124
+MDR-0106,212.3,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Sehat & Aktif,Vaksin Sebagian,378.4,0.953,175
+MDR-0107,265.1,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,26.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),423.7,0.655,243
+MDR-0108,243.0,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,3,Sehat & Aktif,Vaksin Sebagian,352.4,0.738,149
+MDR-0109,207.4,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.9,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.978,116
+MDR-0110,245.7,20,Jantan,Hijauan Murni (Rumput Lapang),21.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),396.8,0.621,244
+MDR-0111,192.5,14,Jantan,Silase Jagung + Hijauan Segar,14.3,4,Sehat & Aktif,Vaksin Sebagian,320.0,0.803,159
+MDR-0112,243.8,20,Jantan,Hijauan Murni (Rumput Lapang),24.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),411.4,0.691,243
+MDR-0113,229.1,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),348.3,0.775,154
+MDR-0114,234.7,30,Jantan,Hijauan Murni (Rumput Lapang),20.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),403.0,0.494,341
+MDR-0115,224.6,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.0,4,Sehat & Aktif,Vaksin Sebagian,388.3,0.609,269
+MDR-0116,231.4,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.5,2,Nafsu Makan Menurun,Vaksin Sebagian,363.2,0.697,190
+MDR-0117,198.3,28,Betina,Jerami Padi Fermentasi + Ampas Tahu,19.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.53,230
+MDR-0118,207.5,18,Jantan,Hijauan Murni (Rumput Lapang),16.3,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),355.5,0.596,249
+MDR-0119,234.5,24,Jantan,Hijauan Murni (Rumput Lapang),23.1,3,Sehat & Aktif,Vaksin Sebagian,383.2,0.551,270
+MDR-0120,214.1,16,Betina,Hijauan Murni (Rumput Lapang),23.2,4,Sehat & Aktif,Vaksin Sebagian,320.0,0.592,179
+MDR-0121,207.2,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),368.2,0.724,223
+MDR-0122,220.1,14,Jantan,Hijauan Murni (Rumput Lapang),19.6,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.637,157
+MDR-0123,199.7,18,Betina,Jerami Padi Fermentasi + Ampas Tahu,18.2,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),360.9,0.583,277
+MDR-0124,237.7,30,Betina,Silase Jagung + Hijauan Segar,24.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),355.5,0.582,203
+MDR-0125,244.2,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.7,3,Sehat & Aktif,Vaksin Sebagian,409.4,0.786,211
+MDR-0126,229.5,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.4,2,Sehat & Aktif,Vaksin Sebagian,400.7,0.718,239
+MDR-0127,223.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),341.7,0.918,129
+MDR-0128,233.9,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),361.6,0.626,204
+MDR-0129,232.7,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.9,3,Sehat & Aktif,Vaksin Sebagian,399.3,0.858,195
+MDR-0130,216.8,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.8,4,Sehat & Aktif,Belum Divaksin,390.5,0.777,224
+MDR-0131,206.0,18,Jantan,Silase Jagung + Hijauan Segar,17.2,4,Dalam Pemulihan,Vaksin Sebagian,367.2,0.752,215
+MDR-0132,236.7,30,Jantan,Konsentrat Komersial Tinggi Protein,24.2,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),346.1,0.839,131
+MDR-0133,255.8,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.5,2,Sehat & Aktif,Vaksin Sebagian,386.9,0.825,159
+MDR-0134,261.6,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),403.0,0.705,201
+MDR-0135,237.5,24,Betina,Konsentrat + Hijauan (Rumput Gajah),22.5,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),369.8,0.748,177
+MDR-0136,184.2,18,Jantan,Hijauan Murni (Rumput Lapang),14.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),342.3,0.559,283
+MDR-0137,238.7,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.6,3,Sehat & Aktif,Vaksin Sebagian,334.4,0.972,99
+MDR-0138,229.0,18,Jantan,Konsentrat Komersial Tinggi Protein,24.1,3,Sehat & Aktif,Vaksin Sebagian,361.6,0.983,135
+MDR-0139,255.9,18,Jantan,Konsentrat Komersial Tinggi Protein,26.8,2,Sehat & Aktif,Belum Divaksin,412.8,0.934,168
+MDR-0140,242.2,16,Jantan,Hijauan Murni (Rumput Lapang),26.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),386.4,0.663,218
+MDR-0141,237.1,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),367.3,0.887,147
+MDR-0142,218.0,24,Betina,Konsentrat + Hijauan (Rumput Gajah),25.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),380.1,0.639,254
+MDR-0143,201.7,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,17.5,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),377.2,0.645,273
+MDR-0144,237.4,20,Betina,Hijauan Murni (Rumput Lapang),24.6,3,Sehat & Aktif,Vaksin Sebagian,349.9,0.556,203
+MDR-0145,252.2,20,Jantan,Silase Jagung + Hijauan Segar,20.9,3,Sehat & Aktif,Vaksin Sebagian,404.7,0.847,181
+MDR-0146,239.7,16,Jantan,Hijauan Murni (Rumput Lapang),25.6,2,Sehat & Aktif,Vaksin Sebagian,358.5,0.638,187
+MDR-0147,220.4,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),330.6,0.816,136
+MDR-0148,263.8,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.8,3,Sehat & Aktif,Vaksin Sebagian,361.6,0.93,106
+MDR-0149,193.3,28,Jantan,Hijauan Murni (Rumput Lapang),17.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),325.2,0.611,216
+MDR-0150,213.5,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.8,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.563,190
+MDR-0151,232.6,18,Betina,Konsentrat + Hijauan (Rumput Gajah),25.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),408.7,0.858,206
+MDR-0152,220.3,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.2,2,Sehat & Aktif,Vaksin Sebagian,364.8,0.644,225
+MDR-0153,240.6,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),27.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),386.2,0.826,177
+MDR-0154,270.3,24,Jantan,Silase Jagung + Hijauan Segar,25.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.7,0.74,129
+MDR-0155,201.5,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.0,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),360.0,0.966,165
+MDR-0156,214.6,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.2,3,Sehat & Aktif,Vaksin Sebagian,326.9,0.909,124
+MDR-0157,233.6,18,Betina,Konsentrat Komersial Tinggi Protein,18.5,4,Sehat & Aktif,Belum Divaksin,368.4,0.785,172
+MDR-0158,243.6,20,Betina,Konsentrat + Hijauan (Rumput Gajah),20.4,3,Dalam Pemulihan,Vaksin Sebagian,376.0,0.733,181
+MDR-0159,183.5,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),16.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.871,157
+MDR-0160,219.8,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.8,2,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),381.3,0.798,203
+MDR-0161,197.4,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.7,2,Sehat & Aktif,Vaksin Sebagian,334.1,0.658,208
+MDR-0162,252.6,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),417.1,0.803,205
+MDR-0163,191.2,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),15.8,3,Sehat & Aktif,Belum Divaksin,359.7,0.855,198
+MDR-0164,204.6,18,Betina,Konsentrat Komersial Tinggi Protein,21.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),351.2,0.864,170
+MDR-0165,194.2,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),321.4,0.865,148
+MDR-0166,232.4,24,Betina,Silase Jagung + Hijauan Segar,22.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),382.0,0.605,248
+MDR-0167,206.2,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.1,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.767,149
+MDR-0168,175.0,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.8,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.967,150
+MDR-0169,195.2,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),354.8,0.887,180
+MDR-0170,228.9,28,Jantan,Silase Jagung + Hijauan Segar,23.3,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),369.5,0.626,225
+MDR-0171,223.6,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),378.2,0.85,182
+MDR-0172,255.5,14,Betina,Silase Jagung + Hijauan Segar,21.2,3,Sehat & Aktif,Vaksin Sebagian,413.5,0.726,218
+MDR-0173,220.8,14,Betina,Konsentrat + Hijauan (Rumput Gajah),21.3,3,Dalam Pemulihan,Belum Divaksin,326.6,0.714,149
+MDR-0174,235.1,14,Betina,Hijauan Murni (Rumput Lapang),23.1,4,Dalam Pemulihan,Belum Divaksin,325.9,0.4,227
+MDR-0175,215.5,18,Jantan,Silase Jagung + Hijauan Segar,20.5,4,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),322.9,0.751,144
+MDR-0176,235.0,20,Jantan,Konsentrat Komersial Tinggi Protein,17.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),380.0,0.972,150
+MDR-0177,210.6,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),324.1,0.875,130
+MDR-0178,228.3,18,Jantan,Konsentrat Komersial Tinggi Protein,17.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),345.9,1.016,116
+MDR-0179,203.5,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.2,3,Sehat & Aktif,Belum Divaksin,336.5,0.643,207
+MDR-0180,175.0,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),332.9,0.79,200
+MDR-0181,231.4,20,Jantan,Hijauan Murni (Rumput Lapang),24.1,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),369.7,0.585,237
+MDR-0182,247.1,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),383.3,0.983,139
+MDR-0183,217.7,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),16.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),345.8,0.862,149
+MDR-0184,216.6,14,Betina,Konsentrat + Hijauan (Rumput Gajah),22.4,3,Sehat & Aktif,Vaksin Sebagian,394.6,0.797,224
+MDR-0185,211.0,20,Jantan,Silase Jagung + Hijauan Segar,17.8,4,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),378.4,0.713,235
+MDR-0186,275.8,20,Jantan,Konsentrat Komersial Tinggi Protein,21.8,2,Sehat & Aktif,Vaksin Sebagian,414.8,0.992,141
+MDR-0187,184.9,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),16.3,3,Sehat & Aktif,Vaksin Sebagian,330.2,0.914,159
+MDR-0188,267.5,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.9,3,Sehat & Aktif,Vaksin Sebagian,393.7,0.882,144
+MDR-0189,226.5,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.4,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),386.0,0.871,184
+MDR-0190,231.7,16,Betina,Jerami Padi Fermentasi + Ampas Tahu,20.4,3,Sehat & Aktif,Vaksin Sebagian,337.5,0.614,173
+MDR-0191,212.9,14,Betina,Silase Jagung + Hijauan Segar,21.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),336.8,0.697,178
+MDR-0192,225.7,30,Jantan,Silase Jagung + Hijauan Segar,18.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),363.4,0.627,220
+MDR-0193,212.1,18,Jantan,Silase Jagung + Hijauan Segar,21.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),362.7,0.862,175
+MDR-0194,189.3,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.2,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),361.1,0.612,281
+MDR-0195,228.4,28,Jantan,Silase Jagung + Hijauan Segar,20.6,3,Sehat & Aktif,Belum Divaksin,368.1,0.687,204
+MDR-0196,228.4,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.2,3,Sehat & Aktif,Vaksin Sebagian,386.9,0.794,200
+MDR-0197,218.7,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,17.5,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),346.3,0.678,189
+MDR-0198,236.3,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),391.4,0.968,161
+MDR-0199,223.4,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.6,4,Sehat & Aktif,Vaksin Sebagian,320.0,0.805,120
+MDR-0200,266.6,30,Jantan,Konsentrat Komersial Tinggi Protein,24.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),402.1,0.856,159
+MDR-0201,203.7,28,Betina,Silase Jagung + Hijauan Segar,19.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),358.7,0.634,245
+MDR-0202,207.4,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.638,177
+MDR-0203,185.1,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),349.6,0.913,181
+MDR-0204,284.5,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),25.5,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),419.5,0.822,165
+MDR-0205,189.7,24,Betina,Silase Jagung + Hijauan Segar,21.5,2,Dalam Pemulihan,Vaksin Sebagian,330.7,0.541,261
+MDR-0206,218.4,28,Betina,Silase Jagung + Hijauan Segar,19.8,4,Sehat & Aktif,Belum Divaksin,361.2,0.617,232
+MDR-0207,225.5,20,Betina,Konsentrat + Hijauan (Rumput Gajah),21.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),350.0,0.773,162
+MDR-0208,222.5,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.4,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),381.7,0.542,294
+MDR-0209,246.2,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.3,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),352.9,0.623,172
+MDR-0210,206.5,30,Jantan,Konsentrat Komersial Tinggi Protein,19.8,2,Sehat & Aktif,Vaksin Sebagian,363.1,0.834,188
+MDR-0211,220.8,14,Betina,Hijauan Murni (Rumput Lapang),21.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),356.9,0.516,264
+MDR-0212,232.6,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),403.7,0.649,264
+MDR-0213,275.4,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),390.2,0.583,197
+MDR-0214,213.2,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),388.6,0.954,184
+MDR-0215,209.9,30,Jantan,Hijauan Murni (Rumput Lapang),20.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),354.2,0.584,248
+MDR-0216,216.5,16,Betina,Silase Jagung + Hijauan Segar,19.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),340.3,0.673,184
+MDR-0217,233.9,14,Betina,Konsentrat + Hijauan (Rumput Gajah),25.2,3,Sehat & Aktif,Vaksin Sebagian,408.8,0.813,216
+MDR-0218,234.9,30,Jantan,Konsentrat Komersial Tinggi Protein,24.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),384.2,0.953,157
+MDR-0219,216.6,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,4,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.639,162
+MDR-0220,258.5,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.1,3,Sehat & Aktif,Vaksin Sebagian,352.5,0.624,151
+MDR-0221,257.9,20,Betina,Konsentrat + Hijauan (Rumput Gajah),25.8,2,Sehat & Aktif,Vaksin Sebagian,398.1,0.781,180
+MDR-0222,219.1,18,Jantan,Konsentrat Komersial Tinggi Protein,21.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),346.5,0.981,130
+MDR-0223,235.6,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),388.3,0.812,189
+MDR-0224,217.2,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.2,3,Dalam Pemulihan,Vaksin Sebagian,353.6,0.75,182
+MDR-0225,206.3,20,Betina,Konsentrat + Hijauan (Rumput Gajah),17.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),351.6,0.794,183
+MDR-0226,234.6,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.6,3,Sehat & Aktif,Vaksin Sebagian,372.9,0.962,144
+MDR-0227,215.3,14,Jantan,Silase Jagung + Hijauan Segar,20.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),336.6,0.854,143
+MDR-0228,242.2,30,Jantan,Konsentrat Komersial Tinggi Protein,26.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),342.7,0.878,115
+MDR-0229,216.5,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.6,3,Sehat & Aktif,Vaksin Sebagian,396.5,0.932,194
+MDR-0230,201.0,16,Jantan,Konsentrat Komersial Tinggi Protein,20.6,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),325.6,0.999,125
+MDR-0231,195.4,20,Jantan,Hijauan Murni (Rumput Lapang),20.6,2,Sehat & Aktif,Vaksin Sebagian,320.0,0.619,202
+MDR-0232,220.8,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),359.7,0.819,170
+MDR-0233,252.5,30,Jantan,Konsentrat Komersial Tinggi Protein,25.2,2,Dalam Pemulihan,Vaksin Sebagian,369.3,0.773,152
+MDR-0234,249.0,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),25.5,3,Sehat & Aktif,Vaksin Sebagian,401.0,0.95,160
+MDR-0235,244.4,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),382.9,0.839,166
+MDR-0236,209.7,18,Jantan,Silase Jagung + Hijauan Segar,20.8,3,Sehat & Aktif,Vaksin Sebagian,336.7,0.886,144
+MDR-0237,241.5,28,Jantan,Silase Jagung + Hijauan Segar,21.0,3,Sehat & Aktif,Vaksin Sebagian,375.6,0.721,186
+MDR-0238,209.6,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.5,3,Sehat & Aktif,Vaksin Sebagian,378.6,0.948,179
+MDR-0239,200.6,24,Jantan,Konsentrat Komersial Tinggi Protein,21.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.914,131
+MDR-0240,209.9,20,Jantan,Hijauan Murni (Rumput Lapang),17.8,3,Sehat & Aktif,Belum Divaksin,370.8,0.584,276
+MDR-0241,254.3,14,Jantan,Konsentrat Komersial Tinggi Protein,22.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),430.5,0.954,185
+MDR-0242,234.9,16,Betina,Konsentrat + Hijauan (Rumput Gajah),26.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),384.7,0.849,177
+MDR-0243,220.7,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),322.6,0.633,161
+MDR-0244,229.9,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),327.9,0.963,102
+MDR-0245,228.5,18,Betina,Konsentrat + Hijauan (Rumput Gajah),24.2,2,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),366.2,0.623,222
+MDR-0246,256.8,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),27.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),427.5,0.96,178
+MDR-0247,232.2,28,Jantan,Silase Jagung + Hijauan Segar,19.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),376.2,0.717,201
+MDR-0248,195.2,28,Jantan,Konsentrat Komersial Tinggi Protein,20.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),343.4,0.869,171
+MDR-0249,233.2,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Nafsu Makan Menurun,Belum Divaksin,407.3,0.674,259
+MDR-0250,254.5,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.8,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),345.7,0.677,135
+MDR-0251,235.6,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.5,3,Sehat & Aktif,Vaksin Sebagian,374.0,0.909,153
+MDR-0252,230.3,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.1,3,Sehat & Aktif,Vaksin Sebagian,381.6,0.965,157
+MDR-0253,256.2,28,Betina,Konsentrat + Hijauan (Rumput Gajah),22.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),406.1,0.674,223
+MDR-0254,217.5,14,Jantan,Konsentrat Komersial Tinggi Protein,18.9,3,Sehat & Aktif,Vaksin Sebagian,322.5,0.967,109
+MDR-0255,251.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),26.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),429.6,0.994,179
+MDR-0256,207.1,24,Jantan,Hijauan Murni (Rumput Lapang),19.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),362.2,0.521,298
+MDR-0257,228.5,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.4,4,Sehat & Aktif,Belum Divaksin,321.7,0.889,105
+MDR-0258,236.4,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),371.6,0.779,174
+MDR-0259,236.3,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),334.1,0.814,121
+MDR-0260,204.7,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.0,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.95,122
+MDR-0261,255.2,16,Jantan,Silase Jagung + Hijauan Segar,19.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),375.4,0.775,156
+MDR-0262,226.2,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.8,3,Sehat & Aktif,Belum Divaksin,380.2,0.742,208
+MDR-0263,266.4,30,Jantan,Konsentrat Komersial Tinggi Protein,24.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),430.2,0.882,186
+MDR-0264,250.4,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.5,4,Sehat & Aktif,Vaksin Sebagian,369.8,0.945,127
+MDR-0265,209.7,16,Jantan,Konsentrat Komersial Tinggi Protein,15.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),331.9,0.968,127
+MDR-0266,228.1,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),393.3,0.884,187
+MDR-0267,220.5,16,Betina,Hijauan Murni (Rumput Lapang),16.7,3,Sehat & Aktif,Belum Divaksin,387.4,0.464,360
+MDR-0268,198.9,14,Jantan,Konsentrat Komersial Tinggi Protein,14.9,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),363.0,0.788,209
+MDR-0269,203.4,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,4,Sehat & Aktif,Vaksin Sebagian,366.2,0.702,232
+MDR-0270,260.7,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.2,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),353.4,0.768,121
+MDR-0271,219.5,16,Betina,Konsentrat + Hijauan (Rumput Gajah),19.3,3,Sehat & Aktif,Vaksin Sebagian,354.4,0.787,172
+MDR-0272,243.6,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.2,3,Sehat & Aktif,Vaksin Sebagian,405.1,0.9,180
+MDR-0273,263.3,18,Jantan,Konsentrat Komersial Tinggi Protein,23.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),407.0,0.982,147
+MDR-0274,264.5,18,Jantan,Silase Jagung + Hijauan Segar,25.7,4,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),413.6,0.691,216
+MDR-0275,220.8,28,Jantan,Silase Jagung + Hijauan Segar,19.4,3,Sehat & Aktif,Vaksin Sebagian,386.9,0.769,216
+MDR-0276,238.2,30,Jantan,Hijauan Murni (Rumput Lapang),23.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),413.6,0.59,298
+MDR-0277,245.8,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),17.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.7,0.85,142
+MDR-0278,194.9,18,Jantan,Silase Jagung + Hijauan Segar,20.2,2,Sehat & Aktif,Belum Divaksin,354.6,0.727,220
+MDR-0279,249.9,14,Jantan,Silase Jagung + Hijauan Segar,21.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),425.3,0.772,228
+MDR-0280,239.5,28,Jantan,Konsentrat Komersial Tinggi Protein,23.9,3,Sehat & Aktif,Vaksin Sebagian,402.8,0.822,199
+MDR-0281,199.2,18,Jantan,Konsentrat Komersial Tinggi Protein,22.9,3,Nafsu Makan Menurun,Belum Divaksin,320.0,0.857,141
+MDR-0282,185.3,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.3,3,Sehat & Aktif,Belum Divaksin,320.0,0.583,232
+MDR-0283,232.1,28,Jantan,Konsentrat Komersial Tinggi Protein,19.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),392.9,0.816,198
+MDR-0284,223.7,20,Jantan,Silase Jagung + Hijauan Segar,23.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),356.9,0.849,157
+MDR-0285,246.0,28,Jantan,Hijauan Murni (Rumput Lapang),24.4,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),366.8,0.482,251
+MDR-0286,234.9,14,Jantan,Silase Jagung + Hijauan Segar,18.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),409.7,0.799,219
+MDR-0287,248.5,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),27.1,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),398.0,0.937,160
+MDR-0288,222.1,20,Jantan,Konsentrat Komersial Tinggi Protein,17.8,3,Sehat & Aktif,Vaksin Sebagian,366.1,0.983,147
+MDR-0289,226.6,16,Jantan,Silase Jagung + Hijauan Segar,20.0,3,Sehat & Aktif,Belum Divaksin,340.5,0.781,146
+MDR-0290,211.3,18,Betina,Hijauan Murni (Rumput Lapang),18.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.503,217
+MDR-0291,225.5,14,Jantan,Konsentrat Komersial Tinggi Protein,21.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),362.5,0.91,151
+MDR-0292,257.8,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),394.3,0.91,150
+MDR-0293,175.0,16,Jantan,Konsentrat Komersial Tinggi Protein,15.6,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.949,153
+MDR-0294,248.5,30,Jantan,Konsentrat Komersial Tinggi Protein,22.2,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),374.3,0.874,144
+MDR-0295,216.9,20,Betina,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),357.9,0.851,166
+MDR-0296,175.6,14,Betina,Jerami Padi Fermentasi + Ampas Tahu,14.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.581,249
+MDR-0297,195.0,14,Jantan,Hijauan Murni (Rumput Lapang),19.5,3,Sehat & Aktif,Belum Divaksin,347.1,0.62,246
+MDR-0298,248.8,18,Betina,Konsentrat + Hijauan (Rumput Gajah),25.5,3,Sehat & Aktif,Vaksin Sebagian,347.6,0.841,118
+MDR-0299,233.0,28,Jantan,Konsentrat Komersial Tinggi Protein,19.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),397.2,0.856,192
+MDR-0300,222.9,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Sehat & Aktif,Vaksin Sebagian,360.1,0.784,176
+MDR-0301,212.7,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),15.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),344.5,0.778,170
+MDR-0302,185.3,28,Jantan,Hijauan Murni (Rumput Lapang),17.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.584,231
+MDR-0303,253.8,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),364.1,0.771,144
+MDR-0304,233.6,24,Jantan,Konsentrat Komersial Tinggi Protein,22.8,4,Sehat & Aktif,Vaksin Sebagian,324.4,0.934,98
+MDR-0305,224.4,18,Jantan,Konsentrat Komersial Tinggi Protein,20.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),341.6,1.042,113
+MDR-0306,194.5,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.2,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.668,188
+MDR-0307,231.2,18,Jantan,Silase Jagung + Hijauan Segar,20.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),390.1,0.83,192
+MDR-0308,257.2,30,Jantan,Hijauan Murni (Rumput Lapang),21.5,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),428.8,0.454,378
+MDR-0309,195.3,24,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.8,2,Sehat & Aktif,Vaksin Sebagian,366.9,0.628,274
+MDR-0310,212.7,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.8,3,Sehat & Aktif,Vaksin Sebagian,353.0,0.622,226
+MDR-0311,270.5,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.6,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),413.2,0.805,178
+MDR-0312,214.3,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.3,3,Sehat & Aktif,Belum Divaksin,338.7,0.737,169
+MDR-0313,222.8,30,Jantan,Silase Jagung + Hijauan Segar,20.9,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),390.4,0.574,292
+MDR-0314,228.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),387.6,0.945,169
+MDR-0315,187.7,14,Jantan,Hijauan Murni (Rumput Lapang),17.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),343.5,0.652,239
+MDR-0316,269.2,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),27.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),370.8,0.778,131
+MDR-0317,203.2,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),355.0,0.988,154
+MDR-0318,273.9,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),30.9,3,Sehat & Aktif,Vaksin Sebagian,375.7,1.044,98
+MDR-0319,222.1,16,Jantan,Konsentrat Komersial Tinggi Protein,22.8,3,Sehat & Aktif,Vaksin Sebagian,365.6,0.971,148
+MDR-0320,235.0,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),387.6,0.651,235
+MDR-0321,212.3,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.3,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),357.9,0.568,257
+MDR-0322,217.1,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.932,111
+MDR-0323,210.0,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.955,116
+MDR-0324,189.8,14,Betina,Jerami Padi Fermentasi + Ampas Tahu,18.7,3,Sehat & Aktif,Vaksin Sebagian,358.5,0.65,260
+MDR-0325,237.5,28,Jantan,Konsentrat Komersial Tinggi Protein,19.5,2,Dalam Pemulihan,Vaksin Sebagian,342.8,0.721,147
+MDR-0326,210.2,24,Jantan,Konsentrat Komersial Tinggi Protein,18.4,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),375.4,0.859,193
+MDR-0327,215.7,20,Jantan,Konsentrat Komersial Tinggi Protein,17.8,2,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),343.1,0.743,172
+MDR-0328,191.7,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.1,3,Dalam Pemulihan,Vaksin Sebagian,362.0,0.566,301
+MDR-0329,199.7,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.6,3,Sehat & Aktif,Vaksin Sebagian,354.8,0.937,166
+MDR-0330,233.9,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),384.8,0.733,206
+MDR-0331,193.5,24,Betina,Jerami Padi Fermentasi + Ampas Tahu,15.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.552,230
+MDR-0332,225.2,18,Betina,Konsentrat + Hijauan (Rumput Gajah),19.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),387.3,0.774,210
+MDR-0333,183.9,20,Jantan,Silase Jagung + Hijauan Segar,17.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),348.2,0.857,192
+MDR-0334,239.7,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.4,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),349.8,0.565,195
+MDR-0335,197.9,24,Jantan,Konsentrat Komersial Tinggi Protein,17.5,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.846,145
+MDR-0336,198.7,24,Jantan,Konsentrat Komersial Tinggi Protein,14.6,2,Sehat & Aktif,Vaksin Sebagian,320.0,0.768,158
+MDR-0337,214.1,30,Jantan,Hijauan Murni (Rumput Lapang),22.7,2,Sehat & Aktif,Belum Divaksin,379.5,0.464,357
+MDR-0338,192.9,20,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.3,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),321.9,0.709,182
+MDR-0339,182.0,30,Betina,Konsentrat + Hijauan (Rumput Gajah),18.2,2,Sehat & Aktif,Vaksin Sebagian,351.4,0.641,265
+MDR-0340,203.3,24,Betina,Konsentrat Komersial Tinggi Protein,18.6,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),330.4,0.76,168
+MDR-0341,213.7,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),368.0,0.71,218
+MDR-0342,205.8,16,Betina,Jerami Padi Fermentasi + Ampas Tahu,22.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),327.5,0.611,200
+MDR-0343,196.6,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.685,181
+MDR-0344,219.7,14,Jantan,Konsentrat Komersial Tinggi Protein,17.4,3,Dalam Pemulihan,Vaksin Sebagian,336.3,0.895,131
+MDR-0345,225.1,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),361.1,0.619,220
+MDR-0346,234.8,28,Jantan,Silase Jagung + Hijauan Segar,22.2,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),326.0,0.682,134
+MDR-0347,224.7,30,Jantan,Hijauan Murni (Rumput Lapang),19.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),381.2,0.572,274
+MDR-0348,236.7,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.3,0.946,136
+MDR-0349,214.1,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.9,2,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),373.7,0.706,227
+MDR-0350,195.1,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.721,174
+MDR-0351,202.2,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.1,3,Sehat & Aktif,Belum Divaksin,347.8,0.802,182
+MDR-0352,197.1,30,Betina,Konsentrat + Hijauan (Rumput Gajah),19.5,4,Sehat & Aktif,Vaksin Sebagian,373.4,0.72,245
+MDR-0353,217.0,30,Betina,Hijauan Murni (Rumput Lapang),20.1,4,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),379.3,0.319,509
+MDR-0354,218.8,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.1,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.679,150
+MDR-0355,206.8,30,Jantan,Konsentrat Komersial Tinggi Protein,18.1,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),370.3,0.828,198
+MDR-0356,255.1,14,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),365.6,0.92,121
+MDR-0357,223.8,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.1,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),380.9,0.799,197
+MDR-0358,266.0,18,Betina,Konsentrat + Hijauan (Rumput Gajah),27.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),391.6,0.805,157
+MDR-0359,211.7,24,Jantan,Konsentrat Komersial Tinggi Protein,22.9,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),381.5,0.882,193
+MDR-0360,268.2,28,Jantan,Silase Jagung + Hijauan Segar,25.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),406.5,0.675,205
+MDR-0361,242.7,28,Jantan,Konsentrat Komersial Tinggi Protein,21.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),388.2,0.866,169
+MDR-0362,224.8,28,Jantan,Silase Jagung + Hijauan Segar,24.9,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),341.0,0.77,151
+MDR-0363,234.1,28,Jantan,Silase Jagung + Hijauan Segar,21.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),341.5,0.685,157
+MDR-0364,205.4,28,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.658,175
+MDR-0365,231.4,20,Jantan,Hijauan Murni (Rumput Lapang),22.7,3,Sehat & Aktif,Vaksin Sebagian,365.2,0.711,189
+MDR-0366,249.6,14,Jantan,Silase Jagung + Hijauan Segar,20.3,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),346.4,0.76,128
+MDR-0367,251.0,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.1,2,Sehat & Aktif,Belum Divaksin,389.6,0.69,201
+MDR-0368,217.9,20,Jantan,Konsentrat Komersial Tinggi Protein,21.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),353.1,0.991,137
+MDR-0369,202.7,30,Betina,Jerami Padi Fermentasi + Ampas Tahu,19.9,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),371.2,0.453,372
+MDR-0370,246.7,18,Jantan,Konsentrat Komersial Tinggi Protein,20.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),407.9,0.972,166
+MDR-0371,187.5,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.2,3,Sehat & Aktif,Vaksin Sebagian,329.6,0.795,179
+MDR-0372,205.7,20,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.7,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),327.5,0.693,176
+MDR-0373,242.1,20,Betina,Konsentrat + Hijauan (Rumput Gajah),25.7,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),345.6,0.771,135
+MDR-0374,241.4,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),25.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),345.9,0.882,119
+MDR-0375,227.3,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,18.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),400.3,0.736,236
+MDR-0376,202.7,24,Jantan,Silase Jagung + Hijauan Segar,21.4,4,Sehat & Aktif,Vaksin Sebagian,335.1,0.743,179
+MDR-0377,209.6,20,Jantan,Konsentrat Komersial Tinggi Protein,21.2,3,Sehat & Aktif,Vaksin Sebagian,330.4,1.01,120
+MDR-0378,196.8,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),15.2,4,Sehat & Aktif,Vaksin Sebagian,341.3,0.917,158
+MDR-0379,245.9,24,Jantan,Konsentrat Komersial Tinggi Protein,22.1,3,Sehat & Aktif,Vaksin Sebagian,410.4,0.936,176
+MDR-0380,255.3,28,Jantan,Hijauan Murni (Rumput Lapang),27.7,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),414.5,0.46,347
+MDR-0381,201.5,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,17.7,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),345.3,0.608,237
+MDR-0382,208.6,14,Jantan,Konsentrat Komersial Tinggi Protein,19.2,2,Sehat & Aktif,Vaksin Sebagian,327.0,0.945,126
+MDR-0383,216.7,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.7,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),325.0,0.681,160
+MDR-0384,198.4,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.4,3,Sehat & Aktif,Vaksin Sebagian,365.3,0.732,229
+MDR-0385,205.3,20,Jantan,Silase Jagung + Hijauan Segar,16.4,3,Sehat & Aktif,Vaksin Sebagian,356.9,0.768,198
+MDR-0386,245.7,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),342.9,0.819,119
+MDR-0387,246.1,20,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.1,4,Dalam Pemulihan,Vaksin Sebagian,375.6,0.707,184
+MDR-0388,234.6,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.3,3,Sehat & Aktif,Vaksin Sebagian,357.0,0.884,139
+MDR-0389,191.3,14,Betina,Konsentrat Komersial Tinggi Protein,16.7,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.795,162
+MDR-0390,240.2,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.0,2,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),366.6,0.464,273
+MDR-0391,238.6,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.7,3,Nafsu Makan Menurun,Belum Divaksin,401.8,0.61,268
+MDR-0392,194.8,20,Jantan,Konsentrat Komersial Tinggi Protein,21.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,1.001,126
+MDR-0393,231.1,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),384.2,0.85,181
+MDR-0394,223.5,20,Jantan,Konsentrat Komersial Tinggi Protein,18.7,3,Sehat & Aktif,Belum Divaksin,337.7,0.951,121
+MDR-0395,256.5,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),27.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),402.2,0.901,162
+MDR-0396,230.8,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.2,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),376.7,0.789,185
+MDR-0397,175.0,24,Jantan,Hijauan Murni (Rumput Lapang),20.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.59,246
+MDR-0398,232.6,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),25.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),351.0,0.82,145
+MDR-0399,257.9,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),403.1,0.939,155
+MDR-0400,207.8,16,Jantan,Konsentrat Komersial Tinggi Protein,18.2,3,Sehat & Aktif,Belum Divaksin,359.5,0.96,159
+MDR-0401,238.8,30,Jantan,Hijauan Murni (Rumput Lapang),20.5,4,Sehat & Aktif,Vaksin Sebagian,344.7,0.486,218
+MDR-0402,175.0,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,15.3,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.564,258
+MDR-0403,232.9,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,21.0,3,Sehat & Aktif,Belum Divaksin,346.1,0.726,156
+MDR-0404,236.1,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,23.1,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),355.4,0.504,237
+MDR-0405,187.1,20,Betina,Hijauan Murni (Rumput Lapang),16.5,2,Sehat & Aktif,Vaksin Sebagian,320.0,0.481,277
+MDR-0406,205.6,30,Betina,Konsentrat + Hijauan (Rumput Gajah),17.7,3,Sehat & Aktif,Vaksin Sebagian,331.2,0.662,190
+MDR-0407,254.2,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,22.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),366.8,0.721,157
+MDR-0408,223.6,16,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.5,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),382.4,0.865,184
+MDR-0409,239.9,16,Jantan,Silase Jagung + Hijauan Segar,20.8,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),377.3,0.834,165
+MDR-0410,227.8,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),405.1,0.949,187
+MDR-0411,220.6,24,Jantan,Konsentrat Komersial Tinggi Protein,23.4,3,Sehat & Aktif,Belum Divaksin,353.9,0.839,159
+MDR-0412,226.4,18,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.4,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),358.6,0.845,157
+MDR-0413,274.6,30,Jantan,Konsentrat + Hijauan (Rumput Gajah),24.5,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),401.7,0.78,163
+MDR-0414,204.5,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,20.8,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),366.5,0.728,223
+MDR-0415,199.4,18,Jantan,Konsentrat Komersial Tinggi Protein,20.6,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),346.7,0.982,150
+MDR-0416,212.0,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.5,2,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.597,181
+MDR-0417,222.4,14,Jantan,Hijauan Murni (Rumput Lapang),19.1,3,Nafsu Makan Menurun,Sudah Vaksin Lengkap (PMK + Antraks),383.6,0.482,335
+MDR-0418,204.5,16,Jantan,Konsentrat Komersial Tinggi Protein,16.0,2,Dalam Pemulihan,Vaksin Sebagian,369.0,0.897,184
+MDR-0419,252.1,16,Jantan,Silase Jagung + Hijauan Segar,22.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),402.0,0.823,183
+MDR-0420,230.6,18,Betina,Konsentrat + Hijauan (Rumput Gajah),24.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),347.5,0.862,136
+MDR-0421,220.4,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),21.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),381.4,0.797,203
+MDR-0422,231.4,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.5,2,Sehat & Aktif,Vaksin Sebagian,351.9,0.598,202
+MDR-0423,261.5,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,27.0,2,Sehat & Aktif,Belum Divaksin,422.5,0.682,237
+MDR-0424,226.7,20,Jantan,Konsentrat + Hijauan (Rumput Gajah),20.8,3,Sehat & Aktif,Vaksin Sebagian,367.0,0.877,160
+MDR-0425,200.4,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),19.9,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.746,161
+MDR-0426,235.4,18,Jantan,Hijauan Murni (Rumput Lapang),24.3,3,Dalam Pemulihan,Vaksin Sebagian,358.2,0.613,201
+MDR-0427,210.9,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.0,3,Sehat & Aktif,Vaksin Sebagian,329.9,0.74,161
+MDR-0428,218.3,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.0,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.794,129
+MDR-0429,211.3,20,Jantan,Konsentrat Komersial Tinggi Protein,17.7,3,Sehat & Aktif,Belum Divaksin,320.1,0.904,121
+MDR-0430,178.9,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.5,3,Dalam Pemulihan,Vaksin Sebagian,320.0,0.685,206
+MDR-0431,205.0,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),23.6,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.799,144
+MDR-0432,208.6,28,Betina,Jerami Padi Fermentasi + Ampas Tahu,20.6,3,Sehat & Aktif,Vaksin Sebagian,361.8,0.54,284
+MDR-0433,215.7,30,Jantan,Hijauan Murni (Rumput Lapang),18.1,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),334.1,0.533,223
+MDR-0434,244.5,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,25.2,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),384.0,0.74,189
+MDR-0435,224.3,20,Jantan,Hijauan Murni (Rumput Lapang),24.0,3,Sehat & Aktif,Belum Divaksin,341.5,0.6,196
+MDR-0436,220.2,30,Jantan,Konsentrat Komersial Tinggi Protein,24.8,4,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),361.6,0.939,151
+MDR-0437,245.3,16,Jantan,Hijauan Murni (Rumput Lapang),23.0,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),417.9,0.673,257
+MDR-0438,221.5,30,Jantan,Hijauan Murni (Rumput Lapang),24.3,3,Sehat & Aktif,Vaksin Sebagian,320.0,0.526,188
+MDR-0439,232.7,30,Jantan,Konsentrat Komersial Tinggi Protein,21.3,3,Dalam Pemulihan,Belum Divaksin,343.1,0.723,153
+MDR-0440,207.9,14,Jantan,Jerami Padi Fermentasi + Ampas Tahu,16.3,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),360.7,0.704,218
+MDR-0441,243.8,20,Betina,Konsentrat Komersial Tinggi Protein,22.4,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),364.1,0.908,133
+MDR-0442,189.0,24,Jantan,Konsentrat + Hijauan (Rumput Gajah),18.4,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),322.9,0.799,168
+MDR-0443,216.6,24,Betina,Jerami Padi Fermentasi + Ampas Tahu,17.7,3,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),320.0,0.497,209
+MDR-0444,207.0,16,Jantan,Jerami Padi Fermentasi + Ampas Tahu,15.5,4,Sehat & Aktif,Belum Divaksin,336.8,0.696,187
+MDR-0445,229.1,30,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.3,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),375.0,0.605,242
+MDR-0446,249.9,18,Jantan,Jerami Padi Fermentasi + Ampas Tahu,19.8,2,Sehat & Aktif,Sudah Vaksin Lengkap (PMK + Antraks),358.2,0.744,146
+MDR-0447,208.2,20,Jantan,Silase Jagung + Hijauan Segar,21.4,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),321.2,0.768,148
+MDR-0448,238.7,28,Jantan,Konsentrat + Hijauan (Rumput Gajah),22.4,3,Sehat & Aktif,Belum Divaksin,388.1,0.782,192
+MDR-0449,227.8,30,Betina,Hijauan Murni (Rumput Lapang),25.2,3,Dalam Pemulihan,Sudah Vaksin Lengkap (PMK + Antraks),371.5,0.371,388
+MDR-0450,237.5,20,Jantan,Konsentrat Komersial Tinggi Protein,19.4,3,Sehat & Aktif,Vaksin Sebagian,329.2,0.984,94
