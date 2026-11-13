@@ -1,0 +1,91 @@
+{
+  "best_model": "XGBoost Regressor",
+  "ensemble_weights": {
+    "xgb": 0.5,
+    "lgbm": 0.35,
+    "rf": 0.15
+  },
+  "metrics": {
+    "MAE (hari)": 9.632,
+    "RMSE (hari)": 13.937,
+    "R2 Score": 0.93,
+    "MAPE (%)": 4.68,
+    "CV R2 (5-Fold)": 0.8614
+  },
+  "ensemble_metrics": {
+    "MAE (hari)": 10.36,
+    "RMSE (hari)": 14.898,
+    "R2 Score": 0.92,
+    "MAPE (%)": 5.03,
+    "CV R2 (5-Fold)": 0.8617
+  },
+  "all_models_comparison": {
+    "Random Forest Regressor": {
+      "MAE (hari)": 16.717,
+      "RMSE (hari)": 22.596,
+      "R2 Score": 0.8159,
+      "MAPE (%)": 8.24,
+      "CV R2 (5-Fold)": 0.7882
+    },
+    "Gradient Boosting Regressor": {
+      "MAE (hari)": 10.532,
+      "RMSE (hari)": 14.443,
+      "R2 Score": 0.9248,
+      "MAPE (%)": 5.2,
+      "CV R2 (5-Fold)": 0.865
+    },
+    "SVR (Baseline)": {
+      "MAE (hari)": 19.179,
+      "RMSE (hari)": 30.668,
+      "R2 Score": 0.6609,
+      "MAPE (%)": 8.89,
+      "CV R2 (5-Fold)": 0.5646
+    },
+    "MLP Regressor (Baseline)": {
+      "MAE (hari)": 11.04,
+      "RMSE (hari)": 14.279,
+      "R2 Score": 0.9265,
+      "MAPE (%)": 5.97,
+      "CV R2 (5-Fold)": 0.9084
+    },
+    "XGBoost Regressor": {
+      "MAE (hari)": 9.632,
+      "RMSE (hari)": 13.937,
+      "R2 Score": 0.93,
+      "MAPE (%)": 4.68,
+      "CV R2 (5-Fold)": 0.8614
+    },
+    "LightGBM Regressor": {
+      "MAE (hari)": 10.378,
+      "RMSE (hari)": 15.287,
+      "R2 Score": 0.9158,
+      "MAPE (%)": 5.1,
+      "CV R2 (5-Fold)": 0.859
+    },
+    "Weighted Ensemble (XGB+LGBM+RF)": {
+      "MAE (hari)": 10.36,
+      "RMSE (hari)": 14.898,
+      "R2 Score": 0.92,
+      "MAPE (%)": 5.03,
+      "CV R2 (5-Fold)": 0.8617
+    }
+  },
+  "onnx_exported": true,
+  "features": {
+    "numerical": [
+      "bobot_awal",
+      "usia_masuk",
+      "jumlah_pakan_harian",
+      "frekuensi_pakan",
+      "target_bobot",
+      "feed_ratio",
+      "weight_gain_target"
+    ],
+    "categorical": [
+      "jenis_kelamin",
+      "jenis_pakan",
+      "kondisi_kesehatan",
+      "status_vaksinasi"
+    ]
+  }
+}

@@ -15,8 +15,17 @@ class PredictionResultModel {
   final double totalWeightGain;
   final List<GrowthPoint> growthCurve;
   final String recommendation;
-  final String modelUsed; // Misal: Ensemble (XGBoost + LightGBM + RF)
+  final String modelUsed; // Misal: Weighted Ensemble (XGBoost + LightGBM + RF)
   final double confidenceScore;
+  final bool isFromBackendApi;
+
+  // Sub-estimasi masing-masing model dalam Ensemble (50% XGBoost, 35% LightGBM, 15% RF)
+  final int? xgboostDays;
+  final double? xgboostAdg;
+  final int? lightgbmDays;
+  final double? lightgbmAdg;
+  final int? rfDays;
+  final double? rfAdg;
 
   PredictionResultModel({
     required this.cattleTag,
@@ -28,8 +37,15 @@ class PredictionResultModel {
     required this.totalWeightGain,
     required this.growthCurve,
     required this.recommendation,
-    this.modelUsed = 'Ensemble Regressor (Offline Edge)',
-    this.confidenceScore = 92.4,
+    this.modelUsed = 'Weighted Ensemble (XGBoost + LightGBM + RF)',
+    this.confidenceScore = 92.0,
+    this.isFromBackendApi = false,
+    this.xgboostDays,
+    this.xgboostAdg,
+    this.lightgbmDays,
+    this.lightgbmAdg,
+    this.rfDays,
+    this.rfAdg,
   });
 
   Map<String, dynamic> toMap() {
@@ -45,4 +61,3 @@ class PredictionResultModel {
     };
   }
 }
-

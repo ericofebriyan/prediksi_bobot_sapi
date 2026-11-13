@@ -39,5 +39,25 @@ class AppColors {
   // Border & Divider
   static const Color border = Color(0xFFE5E7EB);
   static const Color divider = Color(0xFFE2E8F0);
+
+  // Bootstrap Dark Palette (Tele-Vet Madura Dashboard Specification)
+  static const Color bsDark = Color(0xFF212529);
+  static const Color bsDarkHeader = Color(0xFF1A1D20);
+  static const Color bsSurfaceDark = Color(0xFF1E2125);
+  static const Color bsDarkCard = Color(0xFF2B3035);
+  static const Color bsDarkSurface = Color(0xFF343A40);
+  static const Color bsDarkSurfaceHover = Color(0xFF3D444B);
+  static const Color bsDarkBorder = Color(0xFF495057);
+  static const Color bsPrimary = Color(0xFF0D6EFD);
+  static const Color bsPrimaryText = Color(0xFF6EA8FE);
+  static const Color bsSuccess = Color(0xFF198754);
+  static const Color bsSuccessText = Color(0xFF75B798);
+  static const Color bsDanger = Color(0xFFDC3545);
+  static const Color bsDangerBg = Color(0xFF2C0B0E);
+  static const Color bsDangerBorder = Color(0xFF842029);
+  static const Color bsDangerText = Color(0xFFEA868F);
+  static const Color bsWarning = Color(0xFFFFC107);
+  static const Color bsSecondary = Color(0xFFADB5BD);
+  static const Color bsLight = Color(0xFFF8F9FA);
 }
 

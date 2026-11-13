@@ -1,8 +1,10 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/cattle_test_data.dart';
 import '../providers/cattle_provider.dart';
+import 'widgets/new_cattle_input_sheet.dart';
 
 class PredictionFormScreen extends StatefulWidget {
   final String? prefilledTag;
@@ -14,15 +16,17 @@ class PredictionFormScreen extends StatefulWidget {
 }
 
 class _PredictionFormScreenState extends State<PredictionFormScreen> {
+  final List<CattleTestData> _subjects = List.of(CattleTestData.testList);
   int _selectedCattleIndex = 0;
   late double _currentTargetWeight;
   bool _isPredicting = false;
+  String _engineSourceLabel = '100% On-Device (Offline)';
 
   @override
   void initState() {
     super.initState();
     if (widget.prefilledTag != null) {
-      final idx = CattleTestData.testList.indexWhere(
+      final idx = _subjects.indexWhere(
         (c) => c.tag.toUpperCase() == widget.prefilledTag!.toUpperCase(),
       );
       if (idx != -1) {
@@ -30,13 +34,34 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
       }
     }
     _currentTargetWeight = currentCattle.targetWeight;
+    WidgetsBinding.instance.addPostFrameCallback((_) => _loadSavedCattleFromSqlite());
   }
 
-  CattleTestData get currentCattle => CattleTestData.testList[_selectedCattleIndex];
+  CattleTestData get currentCattle => _subjects[_selectedCattleIndex];
+
+  Future<void> _loadSavedCattleFromSqlite() async {
+    try {
+      final prov = context.read<CattleProvider>();
+      await prov.loadCattleList();
+      if (!mounted || prov.cattleList.isEmpty) return;
+
+      setState(() {
+        for (final saved in prov.cattleList) {
+          final normTag = saved.tagNumber.startsWith('#') ? saved.tagNumber : '#${saved.tagNumber}';
+          final exists = _subjects.any((s) => s.tag.toUpperCase() == normTag.toUpperCase());
+          if (!exists) {
+            _subjects.add(CattleTestData.fromCattleModel(saved));
+          }
+        }
+      });
+    } catch (_) {
+      // Tetap gunakan subjek default jika SQLite belum siap (misal di widget test)
+    }
+  }
 
   void _toggleCattle() {
     setState(() {
-      _selectedCattleIndex = (_selectedCattleIndex + 1) % CattleTestData.testList.length;
+      _selectedCattleIndex = (_selectedCattleIndex + 1) % _subjects.length;
       _currentTargetWeight = currentCattle.targetWeight;
     });
 
@@ -48,27 +73,52 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
     );
   }
 
-  void _runEnsemblePrediction() async {
+  Future<void> _runEnsemblePrediction() async {
     setState(() {
       _isPredicting = true;
     });
 
-    // Simulasi komputasi ONNX Edge Runtime
-    await Future.delayed(const Duration(milliseconds: 650));
+    final cattle = currentCattle;
+    try {
+      final prov = context.read<CattleProvider>();
+      final result = await prov.predictHarvest(
+        tagNumber: cattle.tag,
+        initialWeight: cattle.currentWeight,
+        entryAgeMonths: cattle.ageMonths,
+        gender: cattle.gender,
+        feedType: cattle.feedType,
+        dailyFeedAmount: cattle.dailyFeedAmount,
+        feedFrequency: cattle.feedFrequency,
+        healthCondition: cattle.feedlotStatus == 'Mendekati Target'
+            ? 'Sehat & Aktif'
+            : cattle.feedlotStatus,
+        vaccinationStatus: cattle.vaccination,
+        targetWeight: _currentTargetWeight,
+        saveToHistory: false,
+      );
 
-    if (!mounted) return;
+      if (!mounted) return;
+      setState(() {
+        _subjects[_selectedCattleIndex] = cattle.withPrediction(result);
+        _engineSourceLabel = result.isFromBackendApi
+            ? 'Terhubung API Backend (Python Ensemble)'
+            : '100% On-Device (Offline)';
+        _isPredicting = false;
+      });
 
-    setState(() {
-      _isPredicting = false;
-    });
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Inferensi Ensemble AI selesai! Latency: 14.2ms (Edge ONNX).'),
-        backgroundColor: AppColors.forestGreen,
-        duration: Duration(seconds: 2),
-      ),
-    );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Inferensi selesai: ${result.daysToHarvest} hari (${result.modelUsed})',
+          ),
+          backgroundColor: AppColors.forestGreen,
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _isPredicting = false);
+    }
   }
 
   void _saveToSqlite() async {
@@ -108,10 +158,17 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
   Widget build(BuildContext context) {
     final cattle = currentCattle;
 
+    // Hitung batas slider secara dinamis agar aman untuk sapi dengan bobot awal bervariasi
+    final double sliderMin = (cattle.currentWeight + 15).clamp(120.0, 350.0);
+    final double sliderMax = max(430.0, (cattle.targetWeight + 40).clamp(430.0, 600.0));
+    final double safeTargetWeight = _currentTargetWeight.clamp(sliderMin, sliderMax);
+
     // Hitung estimasi reaktif berdasarkan target weight slider
-    final weightDelta = _currentTargetWeight - cattle.currentWeight;
-    final dynamicDays = (weightDelta / cattle.predictedAdg).clamp(5, 120).round();
-    final dynamicHarvestWeight = (_currentTargetWeight + 2.4);
+    final weightDelta = max(0.0, safeTargetWeight - cattle.currentWeight);
+    final dynamicDays = cattle.predictedAdg > 0
+        ? (weightDelta / cattle.predictedAdg).clamp(5, 365).round()
+        : cattle.predictedDays;
+    final dynamicHarvestWeight = (safeTargetWeight + 1.4);
 
     return Scaffold(
       backgroundColor: const Color(0xFFF7F9F6),
@@ -129,12 +186,12 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
               _buildEngineInfoCard(),
               const SizedBox(height: 14),
 
-              // 3. Subjek Ternak Aktif Card (Switch between 1-2 test data)
+              // 3. Subjek Ternak Aktif Card (Default test data + input sapi baru dari SQLite)
               _buildSubjekTernakCard(cattle),
               const SizedBox(height: 14),
 
               // 4. Matriks Parameter Input
-              _buildParameterMatrixCard(cattle),
+              _buildParameterMatrixCard(cattle, sliderMin, sliderMax, safeTargetWeight),
               const SizedBox(height: 16),
 
               // 5. HASIL INFERENSI ENSEMBLE (Dark Forest Green Card)
@@ -146,11 +203,11 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
               const SizedBox(height: 16),
 
               // 7. Kurva Trajektori Pertumbuhan (Chart)
-              _buildTrajektoriCard(cattle),
+              _buildTrajektoriCard(cattle, dynamicDays, dynamicHarvestWeight),
               const SizedBox(height: 16),
 
               // 8. Rekomendasi AI Kandang Pasean
-              _buildRekomendasiSection(),
+              _buildRekomendasiSection(cattle),
               const SizedBox(height: 16),
 
               // 9. Validasi Visual Ternak (CV Dataset)
@@ -298,12 +355,12 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
                 ),
               ),
               Row(
-                children: const [
-                  Icon(Icons.history_toggle_off_rounded, size: 13, color: Color(0xFF4B5563)),
-                  SizedBox(width: 4),
+                children: [
+                  const Icon(Icons.history_toggle_off_rounded, size: 13, color: Color(0xFF4B5563)),
+                  const SizedBox(width: 4),
                   Text(
-                    '100% On-Device (Offline)',
-                    style: TextStyle(
+                    _engineSourceLabel,
+                    style: const TextStyle(
                       fontSize: 10,
                       fontWeight: FontWeight.w500,
                       color: Color(0xFF4B5563),
@@ -324,7 +381,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
           ),
           const SizedBox(height: 2),
           const Text(
-            'Stacking Regressor (XGBoost 45% + LightGBM 35% + Random Forest 20%) • Skripsi Erico Febriyan',
+            'Weighted Ensemble (XGBoost 50% + LightGBM 35% + Random Forest 15%) • Skripsi Erico Febriyan',
             style: TextStyle(fontSize: 11, color: Color(0xFF4B5563), height: 1.3),
           ),
           const SizedBox(height: 10),
@@ -338,7 +395,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
               const SizedBox(width: 14),
               const Text('R² Score: ', style: TextStyle(fontSize: 11, color: Color(0xFF6B7280))),
               const Text(
-                '0.942',
+                '0.920',
                 style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Color(0xFF111827)),
               ),
               const Spacer(),
@@ -509,7 +566,12 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
   // ==========================================
   // 4. MATRIKS PARAMETER INPUT
   // ==========================================
-  Widget _buildParameterMatrixCard(CattleTestData cattle) {
+  Widget _buildParameterMatrixCard(
+    CattleTestData cattle,
+    double sliderMin,
+    double sliderMax,
+    double safeTargetWeight,
+  ) {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
@@ -731,7 +793,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  '${_currentTargetWeight.toInt()} kg',
+                  '${safeTargetWeight.toInt()} kg',
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
@@ -750,10 +812,10 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
               trackHeight: 5,
             ),
             child: Slider(
-              value: _currentTargetWeight,
-              min: 320,
-              max: 430,
-              divisions: 22,
+              value: safeTargetWeight,
+              min: sliderMin,
+              max: sliderMax,
+              divisions: max(5, ((sliderMax - sliderMin) / 5).round()),
               onChanged: (val) {
                 setState(() {
                   _currentTargetWeight = val;
@@ -765,10 +827,10 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 6),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text('Min: 350 kg\n(Ekonomis)', style: TextStyle(fontSize: 10, color: Color(0xFF6B7280))),
-                Text('Ideal Kurban: 380 kg', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF111827))),
-                Text('Maks: 420 kg\n(Sonok)', textAlign: TextAlign.right, style: TextStyle(fontSize: 10, color: Color(0xFF6B7280))),
+              children: [
+                Text('Min: ${sliderMin.toInt()} kg\n(Ekonomis)', style: const TextStyle(fontSize: 10, color: Color(0xFF6B7280))),
+                const Text('Ideal Kurban: 380 kg', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF111827))),
+                Text('Maks: ${sliderMax.toInt()} kg\n(Sonok)', textAlign: TextAlign.right, style: const TextStyle(fontSize: 10, color: Color(0xFF6B7280))),
               ],
             ),
           ),
@@ -855,7 +917,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
                   border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
                 ),
                 child: const Text(
-                  'Presisi Tinggi (95.2%)',
+                  'Presisi Tinggi (92.0%)',
                   style: TextStyle(
                     fontSize: 10,
                     fontWeight: FontWeight.bold,
@@ -900,7 +962,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      '📅 ${cattle.predictedHarvestDate}',
+                      '📅 ${CattleTestData.formatIndoDate(DateTime.now().add(Duration(days: dynamicDays)))}',
                       style: const TextStyle(fontSize: 11, color: Colors.white70),
                     ),
                   ],
@@ -952,7 +1014,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
 
           // Footer
           const Text(
-            'Evaluasi : R² = 0.942  •  MAPE: 2.81%  •  Std Error: ±1.5 kg',
+            'Evaluasi Ensemble : R² = 0.920  •  MAPE: 5.03%  •  MAE: 10.36 Hari',
             style: TextStyle(fontSize: 10, color: Colors.white60),
           ),
         ],
@@ -989,13 +1051,13 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
         // 1. XGBoost
         _buildModelRow(
           name: 'XGBoost Regressor',
-          weightBadge: 'Bobot 45%',
+          weightBadge: 'Bobot 50%',
           badgeColor: AppColors.terracottaBorder,
           badgeTextColor: const Color(0xFFC2410C),
           estimateDays: cattle.xgboostDays,
           estimateWeight: cattle.xgboostWeight,
           adg: cattle.xgboostAdg,
-          progressFactor: 0.45,
+          progressFactor: 0.50,
           progressColor: AppColors.forestGreen,
         ),
         const SizedBox(height: 8),
@@ -1017,13 +1079,13 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
         // 3. Random Forest
         _buildModelRow(
           name: 'Random Forest',
-          weightBadge: 'Bobot 20%',
+          weightBadge: 'Bobot 15%',
           badgeColor: const Color(0xFFF1F5F9),
           badgeTextColor: const Color(0xFF475569),
           estimateDays: cattle.rfDays,
           estimateWeight: cattle.rfWeight,
           adg: cattle.rfAdg,
-          progressFactor: 0.20,
+          progressFactor: 0.15,
           progressColor: const Color(0xFF475569),
         ),
       ],
@@ -1127,7 +1189,11 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
   // ==========================================
   // 7. KURVA TRAJEKTORI PERTUMBUHAN CARD
   // ==========================================
-  Widget _buildTrajektoriCard(CattleTestData cattle) {
+  Widget _buildTrajektoriCard(CattleTestData cattle, int dynamicDays, double dynamicHarvestWeight) {
+    final startInflect = (dynamicDays * 0.5).round();
+    final safeMinRange = max(1, dynamicDays - 3);
+    final safeMaxRange = dynamicDays + 4;
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -1182,7 +1248,11 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
             height: 130,
             width: double.infinity,
             child: CustomPaint(
-              painter: _TrajectoryCurvePainter(),
+              painter: _TrajectoryCurvePainter(
+                startWeight: cattle.currentWeight,
+                targetWeight: dynamicHarvestWeight,
+                predictedDays: dynamicDays,
+              ),
             ),
           ),
           const SizedBox(height: 12),
@@ -1197,13 +1267,13 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Icon(Icons.info_outline_rounded, size: 16, color: Color(0xFFD97706)),
-                SizedBox(width: 8),
+              children: [
+                const Icon(Icons.info_outline_rounded, size: 16, color: Color(0xFFD97706)),
+                const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    'Titik Infleksi Profit: Melewati Day 55, laju konversi FCR turun drastis dari 7.2 menjadi 9.8. Rekomendasi jual berada di rentang 46 - 52 Hari ke depan.',
-                    style: TextStyle(fontSize: 11, color: Color(0xFF78350F), height: 1.35),
+                    'Titik Infleksi Profit: Melewati Day $startInflect, efisiensi FCR mulai melandai (saat ini ${cattle.fcrScore}). Rekomendasi jual optimal berada pada rentang $safeMinRange - $safeMaxRange Hari ke depan.',
+                    style: const TextStyle(fontSize: 11, color: Color(0xFF78350F), height: 1.35),
                   ),
                 ),
               ],
@@ -1217,7 +1287,7 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
   // ==========================================
   // 8. REKOMENDASI AI KANDANG PASEAN
   // ==========================================
-  Widget _buildRekomendasiSection() {
+  Widget _buildRekomendasiSection(CattleTestData cattle) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -1242,8 +1312,8 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
           icon: Icons.eco_outlined,
           iconBg: const Color(0xFFD1FAE5),
           iconColor: const Color(0xFF047857),
-          title: 'Optimalisasi Ransum Fermentasi',
-          body: 'Pertahankan takaran dedak 10.5 kg/hari, tambahkan mineral premix 150 gram per sapi per hari untuk menjaga retensi bobot karkas.',
+          title: 'Optimalisasi Ransum (${cattle.fullName})',
+          body: 'Pertahankan porsi pakan ${cattle.dailyFeedAmount} kg/hari (${cattle.feedFrequency}x sehari), tambahkan mineral premix 150 gram per sapi per hari untuk menjaga retensi bobot karkas.',
         ),
         const SizedBox(height: 8),
 
@@ -1484,42 +1554,41 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
     );
   }
 
-  void _showNewCattleDialog(BuildContext context) {
-    final tagCtrl = TextEditingController();
-    final weightCtrl = TextEditingController();
-
-    showDialog(
+  Future<void> _showNewCattleDialog(BuildContext context) async {
+    final messenger = ScaffoldMessenger.of(context);
+    final result = await showModalBottomSheet<NewCattleSubmitResult>(
       context: context,
-      builder: (ctx) => AlertDialog(
-        title: const Text('Input Ternak Baru', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            TextField(
-              controller: tagCtrl,
-              decoration: const InputDecoration(labelText: 'Nomor Ear Tag', hintText: 'Contoh: MD-099'),
-            ),
-            const SizedBox(height: 12),
-            TextField(
-              controller: weightCtrl,
-              keyboardType: TextInputType.number,
-              decoration: const InputDecoration(labelText: 'Bobot Awal (kg)', hintText: 'Contoh: 310'),
-            ),
-          ],
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (_) => const NewCattleInputSheet(),
+    );
+
+    if (result == null || !mounted) return;
+
+    setState(() {
+      final newTagUpper = result.cattleData.tag.toUpperCase();
+      final existingIdx = _subjects.indexWhere(
+        (s) => s.tag.toUpperCase() == newTagUpper,
+      );
+      if (existingIdx != -1) {
+        _subjects[existingIdx] = result.cattleData;
+        _selectedCattleIndex = existingIdx;
+      } else {
+        _subjects.add(result.cattleData);
+        _selectedCattleIndex = _subjects.length - 1;
+      }
+      _currentTargetWeight = result.cattleData.targetWeight;
+      _engineSourceLabel = result.prediction.isFromBackendApi
+          ? 'Terhubung API Backend (Python Ensemble)'
+          : '100% On-Device (Offline)';
+    });
+
+    messenger.showSnackBar(
+      SnackBar(
+        content: Text(
+          '${result.cattleData.fullName} disimpan ke SQLite! Estimasi panen: ${result.prediction.daysToHarvest} hari.',
         ),
-        actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Batal')),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(backgroundColor: AppColors.forestGreen),
-            onPressed: () {
-              Navigator.pop(ctx);
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Data subjek baru berhasil ditambahkan ke sesi.')),
-              );
-            },
-            child: const Text('Simpan'),
-          ),
-        ],
+        backgroundColor: AppColors.forestGreen,
       ),
     );
   }
@@ -1529,6 +1598,16 @@ class _PredictionFormScreenState extends State<PredictionFormScreen> {
 // TRAJECTORY CHART CUSTOM PAINTER
 // ==========================================
 class _TrajectoryCurvePainter extends CustomPainter {
+  final double startWeight;
+  final double targetWeight;
+  final int predictedDays;
+
+  _TrajectoryCurvePainter({
+    required this.startWeight,
+    required this.targetWeight,
+    required this.predictedDays,
+  });
+
   @override
   void paint(Canvas canvas, Size size) {
     final width = size.width;
@@ -1587,20 +1666,23 @@ class _TrajectoryCurvePainter extends CustomPainter {
 
     canvas.drawPath(linePath, linePaint);
 
+    final midWeight = ((startWeight + targetWeight) / 2).round();
+    final midDay = (predictedDays / 2).round();
+
     // Point 0 (Start)
     canvas.drawCircle(p0, 4, Paint()..color = const Color(0xFF111827));
-    _drawLabel(canvas, '340k', Offset(p0.dx - 10, p0.dy - 18), false);
+    _drawLabel(canvas, '${startWeight.toInt()} kg', Offset(p0.dx - 10, p0.dy - 18), false);
     _drawLabel(canvas, 'Day 0', Offset(p0.dx - 10, height - 10), true);
 
     // Point Inflection
     canvas.drawCircle(pInflection, 4.5, Paint()..color = const Color(0xFF047857));
-    _drawLabel(canvas, 'Infleksi 360 kg', Offset(pInflection.dx - 35, pInflection.dy - 18), false);
-    _drawLabel(canvas, 'Day 24', Offset(pInflection.dx - 15, height - 10), true);
+    _drawLabel(canvas, 'Infleksi $midWeight kg', Offset(pInflection.dx - 35, pInflection.dy - 18), false);
+    _drawLabel(canvas, 'Day $midDay', Offset(pInflection.dx - 15, height - 10), true);
 
     // Point End (Panen Maks)
     canvas.drawCircle(pEnd, 4.5, Paint()..color = const Color(0xFF9E4717));
-    _drawLabel(canvas, 'Panen Maks', Offset(pEnd.dx - 30, pEnd.dy - 18), false);
-    _drawLabel(canvas, 'Day 48 (Optimal)', Offset(pEnd.dx - 45, height - 10), true);
+    _drawLabel(canvas, '${targetWeight.toStringAsFixed(0)} kg', Offset(pEnd.dx - 22, pEnd.dy - 18), false);
+    _drawLabel(canvas, 'Day $predictedDays (Optimal)', Offset(pEnd.dx - 55, height - 10), true);
   }
 
   void _drawLabel(Canvas canvas, String text, Offset offset, bool isSub) {
@@ -1620,5 +1702,8 @@ class _TrajectoryCurvePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant _TrajectoryCurvePainter oldDelegate) =>
+      oldDelegate.startWeight != startWeight ||
+      oldDelegate.targetWeight != targetWeight ||
+      oldDelegate.predictedDays != predictedDays;
 }

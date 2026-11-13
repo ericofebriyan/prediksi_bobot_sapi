@@ -1,3 +1,4 @@
+import json
 import os
 from datetime import datetime, timedelta
 from typing import List
@@ -20,17 +21,50 @@ except ImportError:
     from ..schemas.prediction_schema import PredictionRequest, PredictionResponse, GrowthCurvePoint
 
 # Jalur pencarian model terlatih
-MODEL_PATH = os.path.join(
-    os.path.dirname(__file__), "..", "..", "..", "ml_pipeline", "exported_models", "best_model_pipeline.joblib"
+EXPORTED_DIR = os.path.join(
+    os.path.dirname(__file__), "..", "..", "..", "ml_pipeline", "exported_models"
 )
+ENSEMBLE_MODEL_PATH = os.path.join(EXPORTED_DIR, "sapi_madura_ensemble.joblib")
+BEST_MODEL_PATH = os.path.join(EXPORTED_DIR, "best_model_pipeline.joblib")
+METADATA_PATH = os.path.join(EXPORTED_DIR, "model_metadata.json")
+
+_CACHED_PIPELINE = None
+_CACHED_PIPELINE_PATH = None
+
+
+def _load_trained_pipeline():
+    """Memuat model ML terlatih (prioritas Weighted Ensemble) dari cache/disk."""
+    global _CACHED_PIPELINE, _CACHED_PIPELINE_PATH
+    target_path = ENSEMBLE_MODEL_PATH if os.path.exists(ENSEMBLE_MODEL_PATH) else BEST_MODEL_PATH
+    if not HAS_JOBLIB or not os.path.exists(target_path):
+        return None
+    if _CACHED_PIPELINE is not None and _CACHED_PIPELINE_PATH == target_path:
+        return _CACHED_PIPELINE
+    try:
+        _CACHED_PIPELINE = joblib.load(target_path)
+        _CACHED_PIPELINE_PATH = target_path
+        return _CACHED_PIPELINE
+    except Exception as e:
+        print(f"[Warning] Gagal memuat pipeline joblib: {e}")
+        return None
+
+
+def _read_model_confidence() -> float:
+    """Membaca skor R2 dari model_metadata.json sebagai tingkat keyakinan model."""
+    try:
+        if os.path.exists(METADATA_PATH):
+            with open(METADATA_PATH, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+            r2 = meta.get("ensemble_metrics", {}).get("R2 Score") or meta.get("metrics", {}).get("R2 Score")
+            if isinstance(r2, (int, float)):
+                return round(float(r2) * 100.0, 1)
+    except Exception:
+        pass
+    return 92.0
+
 
 def run_prediction_inference(req: PredictionRequest) -> PredictionResponse:
-    loaded_pipeline = None
-    if HAS_JOBLIB and os.path.exists(MODEL_PATH):
-        try:
-            loaded_pipeline = joblib.load(MODEL_PATH)
-        except Exception as e:
-            print(f"[Warning] Gagal memuat pipeline joblib: {e}")
+    loaded_pipeline = _load_trained_pipeline()
 
     initial_w = req.bobot_awal
     target_w = req.target_bobot
@@ -55,8 +89,8 @@ def run_prediction_inference(req: PredictionRequest) -> PredictionResponse:
         predicted_days = float(loaded_pipeline.predict(input_df)[0])
         predicted_days = max(30, int(round(predicted_days)))
         predicted_adg = round(weight_gain_needed / predicted_days, 2)
-        model_name = "Ensemble Learning (Trained Pipeline)"
-        confidence = 94.2
+        model_name = "Weighted Ensemble Learning (XGBoost + LightGBM + Random Forest)"
+        confidence = _read_model_confidence()
     else:
         # Logika empiris Ensemble Sapi Madura (Fallback robust)
         adg = 0.45

@@ -1,3 +1,6 @@
+import '../../features/prediction/models/cattle_model.dart';
+import '../../features/prediction/models/prediction_result_model.dart';
+
 class CattleTestData {
   final String id;
   final String name;
@@ -254,5 +257,184 @@ class CattleTestData {
   );
 
   static const List<CattleTestData> testList = [sapiBima, sapiArjuna];
+
+  static String formatIndoDate(DateTime date) {
+    const months = [
+      'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember',
+    ];
+    return '${date.day} ${months[date.month - 1]} ${date.year}';
+  }
+
+  /// Memperbarui data prediksi AI pada subjek ternak ketika slider atau inferensi dijalankan ulang.
+  CattleTestData withPrediction(PredictionResultModel result) {
+    final xgbD = result.xgboostDays ?? result.daysToHarvest;
+    final xgbA = result.xgboostAdg ?? result.predictedADG;
+    final lgbmD = result.lightgbmDays ?? result.daysToHarvest;
+    final lgbmA = result.lightgbmAdg ?? result.predictedADG;
+    final rfD = result.rfDays ?? result.daysToHarvest;
+    final rfA = result.rfAdg ?? result.predictedADG;
+
+    return CattleTestData(
+      id: id,
+      name: name,
+      tag: tag,
+      fullName: fullName,
+      ageString: ageString,
+      ageMonths: ageMonths,
+      gender: gender,
+      qualityBadge: qualityBadge,
+      breedDescription: breedDescription,
+      imagePath: imagePath,
+      initialWeight: initialWeight,
+      currentWeight: currentWeight,
+      targetWeight: result.targetWeight,
+      adg: result.predictedADG,
+      harvestDays: result.daysToHarvest,
+      harvestDateString: 'Panen ~${result.daysToHarvest} hari lagi',
+      progressPercent: ((currentWeight / result.targetWeight) * 100).clamp(0.0, 100.0),
+      feedlotStatus: feedlotStatus,
+      feedType: feedType,
+      dailyFeedAmount: dailyFeedAmount,
+      feedFrequency: feedFrequency,
+      vaccination: vaccination,
+      cycleDays: cycleDays,
+      initialLiveWeight: initialLiveWeight,
+      initialPricePerKg: initialPricePerKg,
+      purchasePrice: purchasePrice,
+      dailyFeedCost: dailyFeedCost,
+      totalFeedCost: totalFeedCost,
+      medicalCost: medicalCost,
+      totalProductionCost: totalProductionCost,
+      estimatedHarvestWeight: result.targetWeight,
+      sellingPricePerKg: sellingPricePerKg,
+      estimatedRevenue: result.targetWeight * sellingPricePerKg,
+      netProfit: (result.targetWeight * sellingPricePerKg) - totalProductionCost,
+      roiPercent: totalProductionCost > 0
+          ? (((result.targetWeight * sellingPricePerKg) - totalProductionCost) / totalProductionCost) * 100
+          : 0,
+      bepString: bepString,
+      bepMinWeight: bepMinWeight,
+      fcrScore: fcrScore,
+      fcrCategory: fcrCategory,
+      predictedWeight: double.parse((result.targetWeight + 1.2).toStringAsFixed(1)),
+      predictedAdg: result.predictedADG,
+      predictedDays: result.daysToHarvest,
+      predictedHarvestDate: formatIndoDate(result.estimatedHarvestDate),
+      xgboostDays: xgbD,
+      xgboostWeight: double.parse((currentWeight + (xgbA * xgbD)).toStringAsFixed(1)),
+      xgboostAdg: xgbA,
+      lightgbmDays: lgbmD,
+      lightgbmWeight: double.parse((currentWeight + (lgbmA * lgbmD)).toStringAsFixed(1)),
+      lightgbmAdg: lgbmA,
+      rfDays: rfD,
+      rfWeight: double.parse((currentWeight + (rfA * rfD)).toStringAsFixed(1)),
+      rfAdg: rfA,
+      medicalBreedTitle: medicalBreedTitle,
+      medicalDate: medicalDate,
+      medicalLocation: medicalLocation,
+      medicalTreatmentTitle: medicalTreatmentTitle,
+      medicalTreatmentDose: medicalTreatmentDose,
+      medicalNextBooster: medicalNextBooster,
+    );
+  }
+
+  /// Mengubah input CattleModel baru (dari form / SQLite) menjadi CattleTestData lengkap siap tampil.
+  factory CattleTestData.fromCattleModel(
+    CattleModel cattle, {
+    PredictionResultModel? prediction,
+  }) {
+    final normalizedTag = cattle.tagNumber.startsWith('#') ? cattle.tagNumber : '#${cattle.tagNumber}';
+    final cleanTag = normalizedTag.replaceAll('#', '');
+    final shortName = cattle.name.replaceFirst(RegExp(r'^Sapi\s+', caseSensitive: false), '');
+    final displayFullName = '$cleanTag ($shortName)';
+    final ageYrs = (cattle.entryAgeMonths / 12.0).toStringAsFixed(1);
+
+    final adgVal = prediction?.predictedADG ?? 0.72;
+    final daysVal = prediction?.daysToHarvest ??
+        ((cattle.targetWeight - cattle.initialWeight).clamp(10.0, 500.0) / adgVal).ceil();
+    final harvestDateStr = prediction != null
+        ? formatIndoDate(prediction.estimatedHarvestDate)
+        : formatIndoDate(DateTime.now().add(Duration(days: daysVal)));
+
+    const priceBuyPerKg = 52000.0;
+    const priceSellPerKg = 58500.0;
+    final purchaseCost = cattle.initialWeight * priceBuyPerKg;
+    final dailyFeedCostVal = cattle.dailyFeedAmount * 2200.0;
+    final totalFeedCostVal = dailyFeedCostVal * daysVal;
+    const medCostVal = 300000.0;
+    final hppVal = purchaseCost + totalFeedCostVal + medCostVal;
+    final estRev = cattle.targetWeight * priceSellPerKg;
+    final estProfit = estRev - hppVal;
+    final estRoi = hppVal > 0 ? (estProfit / hppVal) * 100 : 0.0;
+
+    final xgbD = prediction?.xgboostDays ?? (daysVal - 2).clamp(3, 400);
+    final xgbA = prediction?.xgboostAdg ?? double.parse((adgVal * 1.03).toStringAsFixed(2));
+    final lgbmD = prediction?.lightgbmDays ?? daysVal;
+    final lgbmA = prediction?.lightgbmAdg ?? adgVal;
+    final rfD = prediction?.rfDays ?? daysVal + 3;
+    final rfA = prediction?.rfAdg ?? double.parse((adgVal * 0.94).toStringAsFixed(2));
+
+    return CattleTestData(
+      id: (cattle.id ?? DateTime.now().millisecondsSinceEpoch).toString(),
+      name: cattle.name,
+      tag: normalizedTag,
+      fullName: displayFullName,
+      ageString: '$ageYrs Thn',
+      ageMonths: cattle.entryAgeMonths,
+      gender: cattle.gender,
+      qualityBadge: cattle.gender == 'Jantan' ? 'Jantan Baru' : 'Betina Baru',
+      breedDescription: 'Sapi Madura Input Baru • Usia ${cattle.entryAgeMonths} Bulan',
+      imagePath: 'assets/images/sapi_bima.jpg',
+      initialWeight: cattle.initialWeight,
+      currentWeight: cattle.initialWeight,
+      targetWeight: cattle.targetWeight,
+      adg: adgVal,
+      harvestDays: daysVal,
+      harvestDateString: 'Panen ~$daysVal hari lagi',
+      progressPercent: ((cattle.initialWeight / cattle.targetWeight) * 100).clamp(0.0, 100.0),
+      feedlotStatus: cattle.healthCondition,
+      feedType: cattle.feedType,
+      dailyFeedAmount: cattle.dailyFeedAmount,
+      feedFrequency: cattle.feedFrequency,
+      vaccination: cattle.vaccinationStatus,
+      cycleDays: daysVal,
+      initialLiveWeight: cattle.initialWeight,
+      initialPricePerKg: priceBuyPerKg,
+      purchasePrice: purchaseCost,
+      dailyFeedCost: dailyFeedCostVal,
+      totalFeedCost: totalFeedCostVal,
+      medicalCost: medCostVal,
+      totalProductionCost: hppVal,
+      estimatedHarvestWeight: cattle.targetWeight,
+      sellingPricePerKg: priceSellPerKg,
+      estimatedRevenue: estRev,
+      netProfit: estProfit,
+      roiPercent: double.parse(estRoi.toStringAsFixed(1)),
+      bepString: 'Rp ${(hppVal / 1000000).toStringAsFixed(2)}M',
+      bepMinWeight: double.parse((hppVal / priceSellPerKg).toStringAsFixed(0)),
+      fcrScore: double.parse((cattle.dailyFeedAmount / adgVal * 0.65).clamp(5.5, 11.0).toStringAsFixed(1)),
+      fcrCategory: 'Efisien & Terukur',
+      predictedWeight: double.parse((cattle.targetWeight + 1.0).toStringAsFixed(1)),
+      predictedAdg: adgVal,
+      predictedDays: daysVal,
+      predictedHarvestDate: harvestDateStr,
+      xgboostDays: xgbD,
+      xgboostWeight: double.parse((cattle.initialWeight + (xgbA * xgbD)).toStringAsFixed(1)),
+      xgboostAdg: xgbA,
+      lightgbmDays: lgbmD,
+      lightgbmWeight: double.parse((cattle.initialWeight + (lgbmA * lgbmD)).toStringAsFixed(1)),
+      lightgbmAdg: lgbmA,
+      rfDays: rfD,
+      rfWeight: double.parse((cattle.initialWeight + (rfA * rfD)).toStringAsFixed(1)),
+      rfAdg: rfA,
+      medicalBreedTitle: 'Sapi Madura ($cleanTag)',
+      medicalDate: formatIndoDate(DateTime.now()),
+      medicalLocation: 'Bobot Awal: ${cattle.initialWeight.toInt()} kg • Kandang Peternak',
+      medicalTreatmentTitle: 'Pemeriksaan Awal & Pencatatan',
+      medicalTreatmentDose: 'Status: ${cattle.healthCondition} • Vaksin: ${cattle.vaccinationStatus}',
+      medicalNextBooster: formatIndoDate(DateTime.now().add(const Duration(days: 90))),
+    );
+  }
 }
 

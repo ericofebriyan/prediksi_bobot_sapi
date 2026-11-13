@@ -14,84 +14,123 @@ class MainNavigationScreen extends StatefulWidget {
 
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _currentIndex = 0;
+  String _consultationTag = 'MDR-2024-004';
 
-  late final List<Widget> _screens;
-
-  @override
-  void initState() {
-    super.initState();
-    _screens = [
-      DashboardScreen(
-        onNavigateTab: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
-      const PredictionFormScreen(),
-      const RoiCalculatorScreen(),
-      const ConsultationScreen(),
-    ];
+  void _handleNavigateTab(int index, [String? cattleTag]) {
+    setState(() {
+      _currentIndex = index;
+      if (cattleTag != null && cattleTag.isNotEmpty) {
+        _consultationTag = cattleTag;
+      }
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final screens = [
+      DashboardScreen(
+        onNavigateTab: _handleNavigateTab,
+      ),
+      const PredictionFormScreen(),
+      const RoiCalculatorScreen(),
+      ConsultationScreen(
+        key: ValueKey(_consultationTag),
+        initialTag: _consultationTag,
+      ),
+    ];
+
     return Scaffold(
+      backgroundColor: AppColors.bsDark,
       body: IndexedStack(
         index: _currentIndex,
-        children: _screens,
+        children: screens,
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
+        decoration: const BoxDecoration(
+          color: AppColors.bsDarkHeader,
           border: Border(
             top: BorderSide(
-              color: const Color(0xFFE5E7EB).withValues(alpha: 0.8),
-              width: 0.8,
+              color: AppColors.bsDarkSurface,
+              width: 1.0,
             ),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.03),
+              color: Color(0x4D000000),
               blurRadius: 10,
-              offset: const Offset(0, -3),
+              offset: Offset(0, -2),
             ),
           ],
         ),
-        child: NavigationBar(
-          selectedIndex: _currentIndex,
-          indicatorColor: _currentIndex == 1
-              ? AppColors.terracottaBorder
-              : AppColors.forestGreen.withValues(alpha: 0.12),
-          backgroundColor: Colors.white,
-          elevation: 0,
-          height: 65,
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-          onDestinationSelected: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          destinations: const [
-            NavigationDestination(
-              icon: Icon(Icons.grid_view_outlined, size: 22),
-              selectedIcon: Icon(Icons.grid_view_rounded, color: AppColors.forestGreen, size: 22),
-              label: 'Beranda',
+        child: SafeArea(
+          top: false,
+          child: SizedBox(
+            height: 62,
+            child: Row(
+              children: [
+                _buildNavItem(
+                  index: 0,
+                  icon: Icons.grid_view_rounded,
+                  label: 'Ternak',
+                ),
+                _buildNavItem(
+                  index: 1,
+                  icon: Icons.trending_up_rounded,
+                  label: 'Prediksi Panen',
+                ),
+                _buildNavItem(
+                  index: 2,
+                  icon: Icons.medical_services_rounded,
+                  label: 'Sistem Pakar',
+                ),
+                _buildNavItem(
+                  index: 3,
+                  icon: Icons.chat_bubble_rounded,
+                  label: 'Konsultasi',
+                ),
+              ],
             ),
-            NavigationDestination(
-              icon: Icon(Icons.flare_outlined, size: 22),
-              selectedIcon: Icon(Icons.flare_rounded, color: AppColors.terracotta, size: 22),
-              label: 'Prediksi AI',
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildNavItem({
+    required int index,
+    required IconData icon,
+    required String label,
+  }) {
+    final isSelected = _currentIndex == index;
+    final color = isSelected ? AppColors.bsPrimary : AppColors.bsSecondary;
+
+    return Expanded(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        splashColor: AppColors.bsPrimary.withValues(alpha: 0.15),
+        highlightColor: Colors.transparent,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              icon,
+              size: 23,
+              color: color,
             ),
-            NavigationDestination(
-              icon: Icon(Icons.insert_chart_outlined_rounded, size: 22),
-              selectedIcon: Icon(Icons.insert_chart_rounded, color: AppColors.forestGreen, size: 22),
-              label: 'Finansial & ROI',
-            ),
-            NavigationDestination(
-              icon: Icon(Icons.medical_services_outlined, size: 22),
-              selectedIcon: Icon(Icons.medical_services_rounded, color: AppColors.forestGreen, size: 22),
-              label: 'Dokter Hewan',
+            const SizedBox(height: 3),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 11.5,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w400,
+                color: color,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
